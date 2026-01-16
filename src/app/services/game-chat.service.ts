@@ -90,12 +90,33 @@ export class GameChatService {
       request
     ).pipe(
       tap(response => {
-        console.log('Chat Response:', response);
+        console.log('=== SERVICE RECEIVED RESPONSE ===');
+        console.log('Full Response:', JSON.stringify(response, null, 2));
+        console.log('Response.success:', response.success);
+        console.log('Response.data:', response.data);
+        console.log('Response.data.response TYPE:', typeof response.data?.response);
+        console.log('Response.data.response VALUE:', response.data?.response);
+        console.log('Response.data.gameState:', response.data?.gameState);
+        
         if (response.success && response.data) {
+          // Prüfe ob response ein String oder ein Objekt ist
+          let messageContent: string;
+          if (typeof response.data.response === 'string') {
+            messageContent = response.data.response;
+          } else if (typeof response.data.response === 'object') {
+            console.warn('WARNING: response.data.response is an object, converting to JSON string');
+            messageContent = JSON.stringify(response.data.response, null, 2);
+          } else {
+            console.error('ERROR: response.data.response has unexpected type:', typeof response.data.response);
+            messageContent = 'Unerwartete Response-Struktur';
+          }
+          
+          console.log('Final message content to add:', messageContent);
+          
           // AI-Antwort zur History hinzufügen
           const aiMessage: ChatMessage = {
             role: 'assistant',
-            content: response.data.response,
+            content: messageContent,
             timestamp: new Date()
           };
           this.addMessageToHistory(aiMessage);
