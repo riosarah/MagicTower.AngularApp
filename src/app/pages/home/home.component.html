@@ -1,0 +1,122 @@
+<div class="home-container">
+  <div class="hero-section">
+    <div class="hero-content">
+      <h1 class="game-title">
+        <i class="bi bi-cloud-lightning-rain"></i>
+        Magic Tower
+      </h1>
+      <p class="game-subtitle">Ein textbasiertes Adventure-Rollenspiel</p>
+      <p class="game-description">
+        Wähle deinen Charakter, durchquere den magischen Turm und stelle dich mächtigen Gegnern!
+      </p>
+    </div>
+  </div>
+
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      
+      <!-- Chat-basiertes Gameplay (PRIMÄR) -->
+      <div class="col-md-6 mb-4">
+        <div class="card action-card shadow-lg chat-game-card featured-card">
+          <div class="card-body text-center">
+            <div class="featured-badge">
+              <i class="bi bi-star-fill"></i> Empfohlen
+            </div>
+            <i class="bi bi-chat-dots action-icon text-info"></i>
+            <h2 class="card-title">KI Chat Gameplay</h2>
+            <p class="card-text">Spiele mit einem KI Game Master! Die KI erstellt deinen Charakter, startet das Abenteuer und führt dich durch den Turm.</p>
+            
+            <!-- Hauptbutton: Neuer Chat -->
+            <button class="btn btn-info btn-lg mb-3 w-100" (click)="startNewChatGame()">
+              <i class="bi bi-robot"></i> Neues Abenteuer starten
+            </button>
+
+            <!-- Loading Spinner -->
+            <div *ngIf="loading" class="spinner-border text-info my-3" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+
+            <!-- Bestehende Charaktere für Chat -->
+            <div *ngIf="!loading && characters.length > 0" class="mt-4">
+              <hr class="my-3">
+              <p class="small text-muted mb-2">
+                <i class="bi bi-people-fill"></i> Oder mit bestehendem Charakter fortsetzen:
+              </p>
+              <div class="list-group character-select-list">
+                <button 
+                  *ngFor="let character of characters" 
+                  class="list-group-item list-group-item-action character-item-chat"
+                  (click)="startChatGameplay(character)">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="character-info-detailed">
+                      <div class="character-name">
+                        <i class="bi bi-person-circle"></i>
+                        <strong>{{ character.name }}</strong>
+                      </div>
+                      <div class="character-stats-small">
+                        <span class="badge bg-secondary me-1">
+                          {{ getClassDisplayName(character.characterClass) }}
+                        </span>
+                        <span class="badge bg-primary me-1">
+                          Lv {{ character.level }}
+                        </span>
+                        <span class="badge bg-danger me-1">
+                          <i class="bi bi-heart-fill"></i> {{ character.health }}/{{ character.maxHealth }}
+                        </span>
+                        <span class="badge bg-warning text-dark">
+                          <i class="bi bi-coin"></i> {{ character.gold }}
+                        </span>
+                      </div>
+                    </div>
+                    <i class="bi bi-chat-right-text-fill text-info fs-4"></i>
+                  </div>
+                </button>
+              </div>
+            </div>
+
+            <div *ngIf="!loading && characters.length === 0" class="mt-3">
+              <p class="text-muted small">
+                <i class="bi bi-info-circle"></i> Noch keine Charaktere vorhanden. Starte dein erstes Abenteuer!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+
+    <!-- Features Section -->
+    <div class="features-section mt-5">
+      <div class="row">
+        <div class="col-md-3 col-sm-6 mb-4">
+          <div class="feature-card text-center">
+            <i class="bi bi-people-fill feature-icon"></i>
+            <h4>3 Charakterklassen</h4>
+            <p>Warrior, Archer, Druid</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-4">
+          <div class="feature-card text-center">
+            <i class="bi bi-building feature-icon"></i>
+            <h4>Turm-System</h4>
+            <p>10/20/30 Stockwerke</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-4">
+          <div class="feature-card text-center">
+            <i class="bi bi-lightning-fill feature-icon"></i>
+            <h4>Kampfsystem</h4>
+            <p>Normal- & Spezialangriffe</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-4">
+          <div class="feature-card text-center">
+            <i class="bi bi-trophy-fill feature-icon"></i>
+            <h4>Boss-Kämpfe</h4>
+            <p>Alle 5 Stockwerke</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,245 @@
+.home-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding-bottom: 3rem;
+}
+
+.hero-section {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.95) 0%, rgba(118, 75, 162, 0.95) 100%);
+  padding: 4rem 2rem;
+  text-align: center;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.game-title {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: fadeInDown 1s ease-in-out;
+}
+
+.game-title i {
+  margin-right: 1rem;
+  animation: pulse 2s infinite;
+}
+
+.game-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.game-description {
+  font-size: 1.1rem;
+  opacity: 0.8;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.action-card {
+  border: none;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  background: white;
+  position: relative;
+}
+
+.action-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Featured Card Badge */
+.featured-card {
+  border: 3px solid #17a2b8;
+}
+
+.featured-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.featured-badge i {
+  margin-right: 5px;
+}
+
+.chat-game-card {
+  border-top: 5px solid #17a2b8;
+}
+
+.classic-game-card {
+  border-top: 5px solid #007bff;
+}
+
+.action-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.card-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.card-text {
+  color: #6c757d;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+/* Character Select Lists */
+.character-select-list {
+  max-height: 320px;
+  overflow-y: auto;
+  border-radius: 8px;
+}
+
+.character-item-chat,
+.character-item-classic {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  padding: 0.75rem;
+}
+
+.character-item-chat:hover {
+  background-color: #e7f7f8;
+  border-color: #17a2b8;
+  transform: translateX(5px);
+}
+
+.character-item-classic:hover {
+  background-color: #e7f1ff;
+  border-color: #007bff;
+  transform: translateX(5px);
+}
+
+.character-info-detailed {
+  text-align: left;
+  flex-grow: 1;
+}
+
+.character-name {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.character-name i {
+  margin-right: 8px;
+  color: #6c757d;
+}
+
+.character-stats-small {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.character-stats-small .badge {
+  font-size: 0.75rem;
+  padding: 0.35rem 0.6rem;
+  font-weight: 500;
+}
+
+.no-characters {
+  padding: 2rem;
+}
+
+.features-section {
+  padding: 2rem 0;
+}
+
+.feature-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-icon {
+  font-size: 3rem;
+  color: #667eea;
+  margin-bottom: 1rem;
+}
+
+.feature-card h4 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.feature-card p {
+  color: #6c757d;
+  margin-bottom: 0;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@media (max-width: 768px) {
+  .game-title {
+    font-size: 2.5rem;
+  }
+
+  .game-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .feature-card {
+    margin-bottom: 1rem;
+  }
+}

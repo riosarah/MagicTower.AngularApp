@@ -1,0 +1,346 @@
+.game-chat-container {
+  height: 40rem;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  color: white;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+.row {
+  margin: 0;
+}
+
+/* Left Panel - Game State */
+.game-state-panel {
+  background: rgba(0, 0, 0, 0.3);
+  border-right: 2px solid rgba(102, 126, 234, 0.3);
+  padding: 1.5rem;
+  overflow-y: auto;
+  max-height: 100%;
+  max-width:10%;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid rgba(102, 126, 234, 0.3);
+}
+
+.panel-header h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-card h4 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.character-card {
+  border-left: 4px solid #667eea;
+}
+
+.session-card {
+  border-left: 4px solid #17a2b8;
+}
+
+.enemy-card {
+  border-left: 4px solid #dc3545;
+}
+
+.boss-title {
+  color: #ffd700;
+  animation: pulse 2s infinite;
+}
+
+.boss-badge {
+  background: linear-gradient(135deg, #ffd700, #ffed4e);
+  color: #333;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+.stat-label {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.stat-value {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.quick-actions {
+  margin-top: 1.5rem;
+}
+
+.quick-actions h5 {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.quick-actions .action-btn {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  text-align: left;
+  border-color: rgba(102, 126, 234, 0.5);
+  color: #fff;
+}
+
+.quick-actions .action-btn:hover:not(:disabled) {
+  background: rgba(102, 126, 234, 0.3);
+  border-color: #667eea;
+}
+
+/* Right Panel - Chat */
+.chat-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width:100%;
+  padding: 0;
+}
+
+.chat-header {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.3), rgba(118, 75, 162, 0.3));
+  padding: 1.5rem;
+  border-bottom: 2px solid rgba(102, 126, 234, 0.5);
+}
+
+.chat-header h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.chat-header .lead {
+  margin: 0.5rem 0 0 0;
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.message-wrapper {
+  margin-bottom: 1.5rem;
+  display: flex;
+  animation: fadeInUp 0.3s ease;
+}
+
+.user-message-wrapper {
+  justify-content: flex-end;
+}
+
+.ai-message-wrapper {
+  justify-content: flex-start;
+}
+
+.message-bubble {
+  display: flex;
+  gap: 1rem;
+  max-width: 70%;
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.user-message {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  flex-direction: row-reverse;
+}
+
+.ai-message {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.message-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.message-content {
+  flex: 1;
+}
+
+.message-text {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.message-timestamp {
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+
+.loading-message {
+  opacity: 0.8;
+}
+
+.typing-indicator {
+  display: flex;
+  gap: 0.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.typing-indicator span {
+  width: 8px;
+  height: 8px;
+  background: #667eea;
+  border-radius: 50%;
+  animation: typing 1.4s infinite;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typing {
+  0%, 60%, 100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-10px);
+  }
+}
+
+.chat-input-area {
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-top: 2px solid rgba(102, 126, 234, 0.3);
+}
+
+.chat-input {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+}
+
+.chat-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.chat-input:focus {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #667eea;
+  color: white;
+  box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+.send-btn {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border: none;
+  padding: 0.75rem 2rem;
+  font-weight: bold;
+}
+
+.send-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #5568d3, #6a3f8f);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.send-btn:disabled {
+  opacity: 0.5;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Scrollbar Styling */
+.chat-messages::-webkit-scrollbar,
+.game-state-panel::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-track,
+.game-state-panel::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.chat-messages::-webkit-scrollbar-thumb,
+.game-state-panel::-webkit-scrollbar-thumb {
+  background: rgba(102, 126, 234, 0.5);
+  border-radius: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover,
+.game-state-panel::-webkit-scrollbar-thumb:hover {
+  background: rgba(102, 126, 234, 0.7);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .game-state-panel {
+    max-height: 40vh;
+    border-right: none;
+    border-bottom: 2px solid rgba(102, 126, 234, 0.3);
+  }
+
+  .chat-panel {
+    height: 60vh;
+  }
+
+  .message-bubble {
+    max-width: 85%;
+  }
+}

@@ -1,0 +1,439 @@
+/* Container */
+.game-chat-container {
+  min-height: 50rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 1rem;
+}
+
+/* Header */
+.game-header {
+  background: white;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.game-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.game-header i {
+  color: #764ba2;
+  margin-right: 0.5rem;
+}
+
+/* Battle Status Row */
+.battle-status-row {
+  margin-bottom: 1rem;
+}
+
+.status-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: 100%;
+}
+
+.status-header {
+  padding: 0.75rem 1rem;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.status-header i {
+  font-size: 1.3rem;
+}
+
+.status-body {
+  padding: 1rem;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  padding: 0.5rem;
+  background: #f8f9fa;
+  border-radius: 5px;
+}
+
+.stat-label {
+  font-weight: 500;
+  color: #495057;
+  font-size: 0.9rem;
+}
+
+.stat-value {
+  font-weight: bold;
+  color: #212529;
+  font-size: 1rem;
+}
+
+.progress {
+  height: 1.5rem;
+  border-radius: 8px;
+  background-color: #e9ecef;
+  margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+  font-size: 0.85rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 0.5s ease;
+}
+
+/* Main Content */
+.main-content-row {
+  height: calc(100vh - 280px);
+  min-height: 500px;
+}
+
+/* Inventory Panel */
+.inventory-panel {
+  height: 100%;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.inventory-card {
+  background: white;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.inventory-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 0.75rem 1rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.inventory-body {
+  padding: 1rem;
+}
+
+/* Tower Progress */
+.floor-display {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.floor-text {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #667eea;
+}
+
+.current-floor {
+  color: #667eea;
+}
+
+.floor-separator {
+  color: #999;
+  margin: 0 0.5rem;
+}
+
+.max-floor {
+  color: #999;
+  font-size: 2rem;
+}
+
+.floor-label {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+.difficulty-info {
+  text-align: center;
+}
+
+/* Gold Display */
+.gold-amount {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #f39c12;
+}
+
+.gold-amount i {
+  font-size: 2.5rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+/* Weapons */
+.weapon-item {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
+  border: 1px solid #e0e0e0;
+}
+
+.weapon-name {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.weapon-details {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* Chat Panel */
+.chat-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.chat-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.chat-header h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.5rem;
+  background: #f8f9fa;
+}
+
+.message-wrapper {
+  margin-bottom: 1.5rem;
+  display: flex;
+}
+
+.user-message-wrapper {
+  justify-content: flex-end;
+}
+
+.ai-message-wrapper {
+  justify-content: flex-start;
+}
+
+.message-bubble {
+  max-width: 75%;
+  display: flex;
+  gap: 0.75rem;
+  background: white;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-message {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.ai-message {
+  background: white;
+  border: 1px solid #e0e0e0;
+}
+
+.message-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.user-message .message-icon {
+  color: white;
+}
+
+.ai-message .message-icon {
+  color: #667eea;
+}
+
+.message-content {
+  flex: 1;
+}
+
+.message-text {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.user-message .message-text {
+  color: white;
+}
+
+.ai-message .message-text {
+  color: #333;
+}
+
+.message-timestamp {
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+.loading-message {
+  background: #f0f0f0;
+  border: 1px solid #e0e0e0;
+}
+
+.typing-indicator {
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.5rem 0;
+}
+
+.typing-indicator span {
+  width: 8px;
+  height: 8px;
+  background: #999;
+  border-radius: 50%;
+  animation: typing 1.4s infinite;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typing {
+  0%, 60%, 100% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(-10px);
+  }
+}
+
+/* Chat Input */
+.chat-input-area {
+  padding: 1rem 1.5rem;
+  background: white;
+  border-top: 1px solid #e0e0e0;
+}
+
+.chat-input {
+  border-radius: 25px;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid #ddd;
+  font-size: 0.95rem;
+}
+
+.chat-input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+.send-btn {
+  border-radius: 25px;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  font-weight: bold;
+}
+
+.send-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #5568d3 0%, #65408b 100%);
+}
+
+.send-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Health Bar Colors */
+.bg-success {
+  background-color: #28a745 !important;
+}
+
+.bg-warning {
+  background-color: #ffc107 !important;
+}
+
+.bg-danger {
+  background-color: #dc3545 !important;
+}
+
+/* Scrollbar */
+.inventory-panel::-webkit-scrollbar,
+.chat-messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+.inventory-panel::-webkit-scrollbar-track,
+.chat-messages::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.inventory-panel::-webkit-scrollbar-thumb,
+.chat-messages::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.inventory-panel::-webkit-scrollbar-thumb:hover,
+.chat-messages::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .battle-status-row {
+    margin-bottom: 1rem;
+  }
+  
+  .main-content-row {
+    height: auto;
+    min-height: 600px;
+  }
+  
+  .inventory-panel {
+    margin-bottom: 1rem;
+    height: auto;
+  }
+  
+  .chat-panel {
+    height: 600px;
+  }
+}
