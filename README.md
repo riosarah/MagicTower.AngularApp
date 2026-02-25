@@ -1,4 +1,27 @@
-﻿# MagicTowerAngularApp
+# Magic Tower
+This project is a modern take on classic text-based RPG adventures. Inspired by early role-playing games where players progress through typed commands, this game combines nostalgic gameplay with cutting-edge AI technology.
+
+At its core, the game uses an AI agent to dynamically generate scenarios, encounters, and enemies in real time. Instead of relying on predefined story paths, the world evolves based on player input — creating a unique experience in every playthrough.
+
+To ensure consistent rules, reliable game mechanics, and transparent character statistics, the AI agent operates through structured MCP tools with predefined methods. This guarantees that while the narrative is generated dynamically, all gameplay mechanics follow strict and reproducible logic. Player stats, combat outcomes, and environmental interactions remain fair and traceable.
+
+Enemy generation is intelligently constrained based on the selected player character and context. This ensures logical balancing and allows the frontend to dynamically render appropriate avatars for both the player and opponents.
+
+On the frontend, responsive UI logic displays characters and environments using predefined PNG assets. Based on the current game state, stats, characters, and surroundings, the correct visuals are automatically rendered — creating an immersive atmosphere that enhances the text-driven adventure with rich visual feedback.
+
+The result is a hybrid experience:
+
+Classic text-based roleplaying
+
+AI-generated dynamic storytelling
+
+Structured, rule-based mechanics
+
+Visually supported immersive gameplay
+
+Each session becomes a unique adventure while maintaining game integrity and balance.
+ 
+ # MagicTowerAngularApp
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.7.
 
